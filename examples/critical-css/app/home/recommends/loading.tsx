@@ -1,4 +1,5 @@
 import { useStyles } from "@pareto/core";
+
 import styles from "./style.iso.scss";
 
 export const RecommendsSkeleton = () => {

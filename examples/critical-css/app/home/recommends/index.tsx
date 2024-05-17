@@ -1,6 +1,8 @@
-import { Image, promiseMap, useStyles } from "@pareto/core";
 import { use } from "react";
+import { Image, promiseMap, useStyles } from "@pareto/core";
+
 import { getRecommendsKey } from "../stream";
+
 import styles from "./style.iso.scss";
 
 interface RecommendData {

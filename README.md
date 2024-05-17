@@ -30,6 +30,11 @@ Simply put, stream rendering can improve your FCP (First Contentful Paint) and T
 
 // ----------------------
 
-- ParetoPage 中的 setUpClient 、 promiseMap
+base：
+- ParetoPage 中的 setUpClient 、 promiseMap 、 mockClientPromise 
+
 - paretoRequestHandler 服务端
+
+critical css:
+- useStyles 、 StyleContext 、 
 

@@ -1,11 +1,13 @@
+import { Suspense } from "react";
 import type { ParetoPage } from "@pareto/core";
 import { promiseMap, useStyles, Image, mockClientPromise } from "@pareto/core";
-import { Suspense } from "react";
-import { getRecommends, getRecommendsKey } from "./stream";
+
 import { fetchJson } from "../../utils";
-import styles from "./style.iso.scss";
 import { Recommends } from "./recommends";
 import { RecommendsSkeleton } from "./recommends/loading";
+import { getRecommends, getRecommendsKey } from "./stream";
+
+import styles from "./style.iso.scss";
 
 interface InitialData {
   repositories: {

@@ -72,7 +72,7 @@ app.get(
   paretoRequestHandler({
     delay: ABORT_DELAY,
     pageWrapper: (Page) => {
-     return criticalPageWrapper({ page: Page });
+     return criticalPageWrapper({ page: Page });       // ？
     },
   })
 );
