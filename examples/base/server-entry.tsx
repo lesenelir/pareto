@@ -1,9 +1,9 @@
 import express from "express";
 import { paretoRequestHandler } from "@pareto/core/node";
+
 import { sleep } from "./utils";
 
 const app = express();
-
 const ABORT_DELAY = 5_000;
 
 app.use("/api/repositories", async (req, res) => {

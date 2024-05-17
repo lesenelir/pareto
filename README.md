@@ -26,3 +26,10 @@ Simply put, stream rendering can improve your FCP (First Contentful Paint) and T
 - [ x ] Custom rspack configuration
 - [ ] Support for Tailwind, there's a problem with rspack+tailwind's hmr
 - [ ] CLI
+
+
+// ----------------------
+
+- ParetoPage 中的 setUpClient 、 promiseMap
+- paretoRequestHandler 服务端
+

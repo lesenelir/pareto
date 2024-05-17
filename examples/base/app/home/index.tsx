@@ -1,11 +1,13 @@
+import { Suspense } from "react";
 import type { ParetoPage } from "@pareto/core";
 import { promiseMap, Image, mockClientPromise } from "@pareto/core";
-import { Suspense } from "react";
-import { getRecommends, getRecommendsKey } from "./stream";
+
 import { fetchJson } from "../../utils";
-import styles from "./style.module.scss";
 import { Recommends } from "./recommends";
 import { RecommendsSkeleton } from "./recommends/loading";
+import { getRecommends, getRecommendsKey } from "./stream";
+
+import styles from "./style.module.scss";
 
 interface InitialData {
   repositories: {
@@ -30,6 +32,8 @@ const Home: ParetoPage<InitialData> = (props) => {
           </div>
         ))}
       </div>
+
+      {/* use 中 promise resolve 前就走 suspense，reject 就走 Error boundary */}
       <Suspense fallback={<RecommendsSkeleton/>}>
         <Recommends />
       </Suspense>
@@ -37,6 +41,9 @@ const Home: ParetoPage<InitialData> = (props) => {
   );
 };
 
+
+// 从服务端获取数据
+// return 的数据，作为 props 传递给组件
 Home.getServerSideProps = async () => {
   // stream ssr & init server promise
   promiseMap.set(getRecommendsKey, getRecommends());
@@ -45,6 +52,8 @@ Home.getServerSideProps = async () => {
   return repositories;
 };
 
+
+// 初始化客户端？
 Home.setUpClient = async () => {
   // mock client promise, it only will be resolved when server data is ready
   mockClientPromise(getRecommendsKey);

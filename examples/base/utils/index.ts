@@ -1,3 +1,5 @@
+
+// 返回一个 Promise 对象，用于获取 JSON 数据
 export async function fetchJson(url: string, options: RequestInit = {}) {
   const base = 'http://localhost:4000';
   const isoUrl = typeof window === 'undefined' ? `${base}${url}` : url;

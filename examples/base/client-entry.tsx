@@ -1,7 +1,7 @@
-import { StrictMode } from "react";
-import { hydrateRoot } from "react-dom/client";
-import { ParetoPage } from "@pareto/core";
 import superjson from "superjson";
+import { StrictMode } from "react";
+import { ParetoPage } from "@pareto/core";
+import { hydrateRoot } from "react-dom/client";
 
 const startApp = async (Page: ParetoPage) => {
   const root = document.getElementById("main") as HTMLElement;

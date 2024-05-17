@@ -1,6 +1,8 @@
-import { Image, promiseMap } from "@pareto/core";
 import { use } from "react";
+import { Image, promiseMap } from "@pareto/core";
+
 import { getRecommendsKey } from "../stream";
+
 import styles from "./style.module.scss";
 
 interface RecommendData {
@@ -15,7 +17,12 @@ interface RecommendData {
   }[];
 }
 
+// promiseMap 是全局的 map
+
 export function Recommends() {
+  // use hook to get data from promiseMap
+  // use hook can read the value of a promise before it is resolved or rejected
+  // 读取 promise 中的数据 use(promise) or use(context)
   const { feeds }: RecommendData = use(promiseMap.get(getRecommendsKey)!);
 
   return (
